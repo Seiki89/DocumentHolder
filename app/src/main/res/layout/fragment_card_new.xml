@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".card.CardNewFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/header"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            app:cardBackgroundColor="#FAF9F9"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="7dp"
+            app:layout_constraintEnd_toStartOf="@+id/imgWhiteBack"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txtHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/header_font"
+                    android:text="Новая карта"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/mainScreen"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="47dp"
+            app:cardBackgroundColor="#ECECEC"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardFrame"
+                    android:layout_width="0dp"
+                    android:layout_height="250dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="44dp"
+                    android:layout_marginEnd="4dp"
+                    app:cardBackgroundColor="#022d33"
+                    app:cardCornerRadius="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardBank"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="100dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <EditText
+                                android:id="@+id/edBank"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="4dp"
+                                android:background="@null"
+                                android:ems="10"
+                                android:hint="Банк"
+                                android:inputType="textPersonName" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardNum"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="120dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <EditText
+                                    android:id="@+id/edNum1"
+                                    android:layout_width="50dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@null"
+                                    android:ems="10"
+                                    android:hint="NNNN"
+                                    android:inputType="number"
+                                    android:maxLength="4"
+                                    android:maxLines="1"
+                                    android:textAlignment="center" />
+
+                                <TextView
+                                    android:id="@+id/textView6"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="  -  "
+                                    android:textAlignment="center" />
+
+                                <EditText
+                                    android:id="@+id/edNum2"
+                                    android:layout_width="50dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@null"
+                                    android:ems="10"
+                                    android:hint="NNNN"
+                                    android:inputType="number"
+                                    android:maxLength="4"
+                                    android:maxLines="1"
+                                    android:textAlignment="center" />
+
+                                <TextView
+                                    android:id="@+id/textView7"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="  -  "
+                                    android:textAlignment="center" />
+
+                                <EditText
+                                    android:id="@+id/edNum3"
+                                    android:layout_width="50dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@null"
+                                    android:ems="10"
+                                    android:hint="NNNN"
+                                    android:inputType="number"
+                                    android:maxLength="4"
+                                    android:maxLines="1"
+                                    android:textAlignment="center" />
+
+                                <TextView
+                                    android:id="@+id/textView8"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="  -  "
+                                    android:textAlignment="center" />
+
+                                <EditText
+                                    android:id="@+id/edNum4"
+                                    android:layout_width="50dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@null"
+                                    android:ems="10"
+                                    android:hint="NNNN"
+                                    android:inputType="number|textPersonName"
+                                    android:maxLength="4"
+                                    android:maxLines="1"
+                                    android:textAlignment="center" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardDate"
+                            android:layout_width="80dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="16dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/cardNum">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <EditText
+                                    android:id="@+id/edDate1"
+                                    android:layout_width="30dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@null"
+                                    android:ems="10"
+                                    android:hint="YY"
+                                    android:inputType="number"
+                                    android:maxLength="2"
+                                    android:maxLines="1"
+                                    android:textAlignment="center"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:id="@+id/textView2"
+                                    android:layout_width="10dp"
+                                    android:layout_height="40dp"
+                                    android:layout_weight="1"
+                                    android:text="  /  "
+                                    android:textAlignment="center" />
+
+                                <EditText
+                                    android:id="@+id/edDate2"
+                                    android:layout_width="30dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@null"
+                                    android:ems="10"
+                                    android:hint="YY"
+                                    android:inputType="number"
+                                    android:maxLength="2"
+                                    android:maxLines="1"
+                                    android:textAlignment="center"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardName"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="130dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/cardDate">
+
+                            <EditText
+                                android:id="@+id/edName"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="4dp"
+                                android:background="@null"
+                                android:ems="10"
+                                android:hint="Имя"
+                                android:inputType="textPersonName" />
+                        </androidx.cardview.widget.CardView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <ImageView
+                    android:id="@+id/imgBackCircle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="2dp"
+                    android:background="#00FFFFFF"
+                    android:elevation="6dp"
+                    android:src="@drawable/ic_backspace"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgBtnCircle"
+                    app:layout_constraintEnd_toEndOf="@+id/imgBtnCircle"
+                    app:layout_constraintStart_toStartOf="@+id/imgBtnCircle"
+                    app:layout_constraintTop_toTopOf="@+id/imgBtnCircle" />
+
+                <ImageView
+                    android:id="@+id/imgBtnCircle"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="220dp"
+                    android:layout_marginEnd="32dp"
+                    android:background="@drawable/button_round"
+                    android:elevation="10px"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/cardFrame"
+                    app:srcCompat="@drawable/button_round" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardCvcCvvPin"
+                    android:layout_width="150dp"
+                    android:layout_height="130dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="16dp"
+                    app:cardBackgroundColor="#022d33"
+                    app:cardCornerRadius="15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cardFrame">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardCvv"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="24dp"
+                            app:cardCornerRadius="15dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <EditText
+                                    android:id="@+id/edCvc"
+                                    android:layout_width="0dp"
+                                    android:layout_height="0dp"
+                                    android:background="@null"
+                                    android:ems="10"
+                                    android:hint="Cvc2/Cvv2"
+                                    android:inputType="number"
+                                    android:maxLength="3"
+                                    android:maxLines="1"
+                                    android:textAlignment="center"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardPin"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginEnd="24dp"
+                            android:layout_marginBottom="16dp"
+                            app:cardCornerRadius="15dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <EditText
+                                    android:id="@+id/edPin"
+                                    android:layout_width="0dp"
+                                    android:layout_height="0dp"
+                                    android:background="@null"
+                                    android:ems="10"
+                                    android:hint="Pin"
+                                    android:inputType="number"
+                                    android:maxLength="4"
+                                    android:maxLines="1"
+                                    android:textAlignment="center"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </androidx.cardview.widget.CardView>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/imgWhiteBack"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/header"
+            app:srcCompat="@drawable/button_round_white" />
+
+        <ImageView
+            android:id="@+id/imgSaveBtn"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/button_round"
+            android:elevation="10dp"
+            android:src="@drawable/button_round"
+            app:layout_constraintBottom_toBottomOf="@+id/header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/header" />
+
+        <ImageView
+            android:id="@+id/imgSaveIco"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:elevation="11dp"
+            android:src="@drawable/ic_save"
+            app:layout_constraintBottom_toBottomOf="@+id/imgSaveBtn"
+            app:layout_constraintEnd_toEndOf="@+id/imgSaveBtn"
+            app:layout_constraintStart_toStartOf="@+id/imgWhiteBack"
+            app:layout_constraintTop_toTopOf="@+id/imgSaveBtn" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

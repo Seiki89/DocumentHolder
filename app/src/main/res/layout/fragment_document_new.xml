@@ -1,0 +1,1153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".document.DocumentNewFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/header"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            app:cardBackgroundColor="#FAF9F9"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="7dp"
+            app:layout_constraintEnd_toStartOf="@+id/imgWhiteBack"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txtHeader"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/header_font"
+                    android:singleLine="true"
+                    android:text="Новый документ будет"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.493"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/mainScreen"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="47dp"
+            app:cardBackgroundColor="#ECECEC"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imgBackCircle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="2dp"
+                    android:background="#00FFFFFF"
+                    android:elevation="6dp"
+                    android:src="@drawable/ic_backspace"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgBtnCircle"
+                    app:layout_constraintEnd_toEndOf="@+id/imgBtnCircle"
+                    app:layout_constraintStart_toStartOf="@+id/imgBtnCircle"
+                    app:layout_constraintTop_toTopOf="@+id/imgBtnCircle" />
+
+                <ImageView
+                    android:id="@+id/imgBtnCircle"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/button_round"
+                    android:elevation="10px"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:srcCompat="@drawable/button_round" />
+
+                <ScrollView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginBottom="32dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtInfo1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="TextView"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/edInput1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <View
+                            android:id="@+id/divLn1"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/txtInfo2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="TextView"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/edInput2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <View
+                            android:id="@+id/divLn2"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/txtInfo3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="TextView"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/edInput3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <View
+                            android:id="@+id/divLn3"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/txtInfo4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="TextView"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/edInput4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <View
+                            android:id="@+id/divLn4"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/txtInfo5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="TextView"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/edInput5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <View
+                            android:id="@+id/divLn5"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/txtInfo6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="TextView"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/edInput6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <View
+                            android:id="@+id/divLn6"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/txtInfo7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="TextView"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/edInput7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <View
+                            android:id="@+id/divLn7"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/txtInfo8"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="TextView"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/edInput8"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <View
+                            android:id="@+id/divLn8"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/txtInfo9"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="TextView"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/edInput9"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <View
+                            android:id="@+id/divLn9"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/txtInfo10"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="TextView"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/edInput10"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <View
+                            android:id="@+id/divLn10"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/txtInfo11"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="TextView"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/edInput11"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <View
+                            android:id="@+id/divLn11"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/txtInfo12"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="TextView"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/edInput12"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <View
+                            android:id="@+id/divLn12"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/txtInfo13"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="TextView"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/edInput13"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <View
+                            android:id="@+id/divLn13"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/txtInfo14"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="TextView"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/edInput14"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <View
+                            android:id="@+id/divLn14"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/txtInfo15"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="TextView"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/edInput15"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <View
+                            android:id="@+id/divLn15"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/txtInfo16"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="TextView"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/edInput16"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <View
+                            android:id="@+id/divLn16"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/txtInfo17"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="TextView"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/edInput17"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <View
+                            android:id="@+id/divLn17"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/txtInfo18"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="TextView"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/edInput18"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <View
+                            android:id="@+id/divLn18"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/txtInfo19"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="TextView"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/edInput19"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <View
+                            android:id="@+id/divLn19"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/txtInfo20"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="TextView"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/edInput20"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <View
+                            android:id="@+id/divLn20"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/txtInfo21"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="TextView"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/edInput21"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <View
+                            android:id="@+id/divLn21"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/txtInfo22"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="TextView"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/edInput22"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <View
+                            android:id="@+id/divLn22"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/txtInfo23"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="TextView"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/edInput23"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <View
+                            android:id="@+id/divLn23"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/txtInfo24"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="TextView"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/edInput24"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <View
+                            android:id="@+id/divLn24"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/txtInfo25"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="TextView"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/edInput25"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <View
+                            android:id="@+id/divLn25"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/txtInfo26"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="TextView"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/edInput26"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <View
+                            android:id="@+id/divLn26"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/txtInfo27"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="TextView"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/edInput27"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <View
+                            android:id="@+id/divLn27"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/txtInfo28"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="TextView"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/edInput28"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <View
+                            android:id="@+id/divLn28"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/txtInfo29"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="TextView"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/edInput29"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <View
+                            android:id="@+id/divLn29"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/txtInfo30"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="TextView"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/edInput30"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <View
+                            android:id="@+id/divLn30"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/txtInfo31"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="TextView"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/edInput31"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <View
+                            android:id="@+id/divLn31"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/txtInfo32"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="TextView"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/edInput32"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <View
+                            android:id="@+id/divLn32"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/txtInfo33"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="TextView"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/edInput33"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <View
+                            android:id="@+id/divLn33"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/txtInfo34"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="TextView"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/edInput34"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <View
+                            android:id="@+id/divLn34"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/txtInfo35"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="TextView"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/edInput35"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <View
+                            android:id="@+id/divLn35"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/txtInfo36"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="TextView"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/edInput36"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <View
+                            android:id="@+id/divLn36"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/txtInfo37"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="TextView"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/edInput37"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <View
+                            android:id="@+id/divLn37"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/txtInfo38"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="TextView"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/edInput38"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <View
+                            android:id="@+id/divLn38"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/txtInfo39"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="TextView"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/edInput39"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <View
+                            android:id="@+id/divLn39"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/txtInfo40"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="TextView"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <MultiAutoCompleteTextView
+                            android:id="@+id/edInput40"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <View
+                            android:id="@+id/divLn40"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                    </LinearLayout>
+                </ScrollView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/imgWhiteBack"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/header"
+            app:srcCompat="@drawable/button_round_white" />
+
+        <ImageView
+            android:id="@+id/imgSaveBtn"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/button_round"
+            android:elevation="10dp"
+            android:src="@drawable/button_round"
+            app:layout_constraintBottom_toBottomOf="@+id/header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/header" />
+
+        <ImageView
+            android:id="@+id/imgSaveIco"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:elevation="11dp"
+            android:src="@drawable/ic_save"
+            app:layout_constraintBottom_toBottomOf="@+id/imgSaveBtn"
+            app:layout_constraintEnd_toEndOf="@+id/imgSaveBtn"
+            app:layout_constraintStart_toStartOf="@+id/imgWhiteBack"
+            app:layout_constraintTop_toTopOf="@+id/imgSaveBtn" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
