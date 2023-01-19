@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".note.NoteOpenFragment">
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -105,7 +104,7 @@
                     android:elevation="10dp"
                     android:src="@drawable/button_round"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imageView9" />
+                    app:layout_constraintStart_toEndOf="@+id/imgBtnDel" />
 
                 <ImageView
                     android:id="@+id/imageView8"
@@ -119,7 +118,7 @@
                     app:layout_constraintTop_toTopOf="@+id/imageView6" />
 
                 <ImageView
-                    android:id="@+id/imageView9"
+                    android:id="@+id/imgBtnDel"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_marginStart="32dp"
@@ -135,11 +134,11 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:elevation="11dp"
-                    android:src="@drawable/ic_gallary"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView9"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView9"
-                    app:layout_constraintStart_toStartOf="@+id/imageView9"
-                    app:layout_constraintTop_toTopOf="@+id/imageView9" />
+                    android:src="@drawable/ic_delete"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgBtnDel"
+                    app:layout_constraintEnd_toEndOf="@+id/imgBtnDel"
+                    app:layout_constraintStart_toStartOf="@+id/imgBtnDel"
+                    app:layout_constraintTop_toTopOf="@+id/imgBtnDel" />
 
                 <ImageView
                     android:id="@+id/imgBtnCircle"

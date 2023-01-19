@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/documentFragment">
+
+    <fragment
+        android:id="@+id/documentFragment"
+        android:name="com.seiki.android.docholder.screens.work.documents.doc_fragment.DocumentFragment"
+        android:label="fragment_document"
+        tools:layout="@layout/fragment_document" >
+        <action
+            android:id="@+id/action_documentFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_documentFragment_to_selectNewDocFragment"
+            app:destination="@id/selectNewDocFragment" />
+        <action
+            android:id="@+id/action_documentFragment_to_documentNewFragment"
+            app:destination="@id/documentNewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cardFragment"
+        android:name="com.seiki.android.docholder.screens.work.cards.card_fragment.CardFragment"
+        android:label="fragment_card"
+        tools:layout="@layout/fragment_card" >
+        <action
+            android:id="@+id/action_cardFragment_to_cardNewFragment"
+            app:destination="@id/cardNewFragment" />
+        <action
+            android:id="@+id/action_cardFragment_to_cardOpenFragment"
+            app:destination="@id/cardOpenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/noteFragment"
+        android:name="com.seiki.android.docholder.screens.work.notes.note_fragment.NoteFragment"
+        android:label="fragment_note"
+        tools:layout="@layout/fragment_note" >
+        <action
+            android:id="@+id/action_noteFragment_to_noteOpenFragment"
+            app:destination="@id/noteOpenFragment" />
+        <action
+            android:id="@+id/action_noteFragment_to_noteNewFragment"
+            app:destination="@id/noteNewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/passFragment"
+        android:name="com.seiki.android.docholder.screens.work.passwords.pass_fragment.PassFragment"
+        android:label="fragment_pass"
+        tools:layout="@layout/fragment_pass" >
+        <action
+            android:id="@+id/action_passFragment_to_passOpenFragment"
+            app:destination="@id/passOpenFragment" />
+        <action
+            android:id="@+id/action_passFragment_to_passNewFragment"
+            app:destination="@id/passNewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.seiki.android.docholder.screens.work.settings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/noteOpenFragment"
+        android:name="com.seiki.android.docholder.screens.work.notes.note_open_fragment.NoteOpenFragment"
+        android:label="fragment_note_open"
+        tools:layout="@layout/fragment_note_open" >
+        <action
+            android:id="@+id/action_noteOpenFragment_to_noteFragment"
+            app:destination="@id/noteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/noteNewFragment"
+        android:name="com.seiki.android.docholder.screens.work.notes.note_new_fragment.NoteNewFragment"
+        android:label="fragment_note_new"
+        tools:layout="@layout/fragment_note_new" >
+        <action
+            android:id="@+id/action_noteNewFragment_to_noteFragment"
+            app:destination="@id/noteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/passNewFragment"
+        android:name="com.seiki.android.docholder.screens.work.passwords.pass_new_fragment.PassNewFragment"
+        android:label="fragment_pass_new"
+        tools:layout="@layout/fragment_pass_new" >
+        <action
+            android:id="@+id/action_passNewFragment_to_passFragment"
+            app:destination="@id/passFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/passOpenFragment"
+        android:name="com.seiki.android.docholder.screens.work.passwords.pass_open_fragment.PassOpenFragment"
+        android:label="fragment_pass_open"
+        tools:layout="@layout/fragment_pass_open" >
+        <action
+            android:id="@+id/action_passOpenFragment_to_passFragment"
+            app:destination="@id/passFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cardNewFragment"
+        android:name="com.seiki.android.docholder.screens.work.cards.card_new_fragment.CardNewFragment"
+        android:label="fragment_card_new"
+        tools:layout="@layout/fragment_card_new" >
+        <action
+            android:id="@+id/action_cardNewFragment_to_cardFragment"
+            app:destination="@id/cardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cardOpenFragment"
+        android:name="com.seiki.android.docholder.screens.work.cards.card_open_fragment.CardOpenFragment"
+        android:label="fragment_card_open"
+        tools:layout="@layout/fragment_card_open" >
+        <action
+            android:id="@+id/action_cardOpenFragment_to_cardFragment"
+            app:destination="@id/cardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectNewDocFragment"
+        android:name="com.seiki.android.docholder.screens.work.documents.select_new_doc_fragment.SelectNewDocFragment"
+        android:label="SelectNewDocFragment" >
+        <action
+            android:id="@+id/action_selectNewDocFragment_to_documentFragment"
+            app:destination="@id/documentFragment" />
+        <action
+            android:id="@+id/action_selectNewDocFragment_to_documentNewFragment"
+            app:destination="@id/documentNewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/documentNewFragment"
+        android:name="com.seiki.android.docholder.screens.work.documents.doc_new_fragment.DocumentNewFragment"
+        android:label="DocumentNewFragment" >
+        <action
+            android:id="@+id/action_documentNewFragment_to_documentFragment"
+            app:destination="@id/documentFragment" />
+    </fragment>
+</navigation>

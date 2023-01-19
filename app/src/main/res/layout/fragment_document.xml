@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".document.DocumentFragment">
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -123,8 +122,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="130dp"
                         android:scrollbars="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        android:orientation="horizontal"
                         android:visibility="gone"
-                        tools:listitem="@layout/adapter_docs_recycle"
                         tools:visibility="visible" />
 
                     <TextView
@@ -143,6 +143,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="130dp"
                         android:visibility="gone"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        android:orientation="horizontal"
                         tools:visibility="visible" />
 
                     <TextView
@@ -161,6 +163,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="130dp"
                         android:visibility="gone"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        android:orientation="horizontal"
                         tools:visibility="visible" />
 
                     <TextView
@@ -179,6 +183,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="130dp"
                         android:visibility="gone"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        android:orientation="horizontal"
                         tools:visibility="visible" />
 
                     <TextView
@@ -197,6 +203,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="130dp"
                         android:visibility="gone"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        android:orientation="horizontal"
                         tools:visibility="visible" />
 
                     <TextView
@@ -215,6 +223,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="130dp"
                         android:visibility="gone"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        android:orientation="horizontal"
                         tools:visibility="visible" />
 
                     <TextView
@@ -233,6 +243,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="130dp"
                         android:visibility="gone"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        android:orientation="horizontal"
                         tools:visibility="visible" />
 
                     <TextView
@@ -251,6 +263,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="130dp"
                         android:visibility="gone"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        android:orientation="horizontal"
                         tools:visibility="visible" />
                 </LinearLayout>
             </ScrollView>

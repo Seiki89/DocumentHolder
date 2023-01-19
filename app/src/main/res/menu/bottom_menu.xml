@@ -3,34 +3,34 @@
 
     <item
         android:title="Документы"
-        android:id="@+id/Document"
+        android:id="@+id/documentFragment"
         android:icon="@drawable/ic_bottom_document"
         android:orderInCategory="100"
          />
 
     <item
         android:title="Карты"
-        android:id="@+id/Card"
+        android:id="@+id/cardFragment"
         android:icon="@drawable/ic_bottom_card"
         android:orderInCategory="200"
         />
 
     <item android:title="Пароли"
-        android:id="@+id/Password"
+        android:id="@+id/passFragment"
         android:icon="@drawable/ic_bottom_password"
         android:orderInCategory="300"
         />
 
     <item
         android:title="Заметки"
-        android:id="@+id/Note"
+        android:id="@+id/noteFragment"
         android:icon="@drawable/ic_bottom_note"
         android:orderInCategory="400"
         />
 
     <item
         android:title="Настройки"
-        android:id="@+id/Settings"
+        android:id="@+id/settingsFragment"
         android:icon="@drawable/ic__settings"
         android:orderInCategory="500"
         />
