@@ -13,6 +13,7 @@ import com.seiki.android.docholder.REPOSITORY_DOC
 import com.seiki.android.docholder.databinding.FragmentDocumentBinding
 import com.seiki.android.docholder.model.DocModel
 import com.seiki.android.docholder.screens.work.documents.DocumentViewModel
+import com.seiki.android.docholder.screens.work.documents.doc_new_fragment.ForDoc
 import kotlinx.coroutines.*
 
 class DocumentFragment : Fragment() {
@@ -183,13 +184,7 @@ class DocumentFragment : Fragment() {
     private fun zeroBaseInit() {
         //создание 0й точи базы
         bind.txtBtnCircle.setOnClickListener {
-            viewModel.insert(DocModel(
-                0, "", "", "", "", "", "",
-                "", "", "", "", "", "", "", "", "", "",
-                "", "", "", "", "", "", "", "", "",
-                "", "", "", "", "", "", "", "", "",
-                "", "", "", "", "", "", "", "", "",
-                "", "", "", "", 0, 0, 0))
+            viewModel.insert(ForDoc().zeroBaseInit)
             APP.navController.navigate(R.id.action_documentFragment_to_selectNewDocFragment)
         }
     }

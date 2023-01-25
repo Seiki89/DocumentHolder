@@ -18,16 +18,17 @@ class DocumentViewModel(application: Application): AndroidViewModel(application)
         val daoDoc = MainDb.db(context).getDao()
         REPOSITORY_DOC = DocRealization(daoDoc)
     }
+
     fun insert(docModel: DocModel) =
         viewModelScope.launch(Dispatchers.IO) {
-            REPOSITORY_DOC.insertDoc(docModel){}
+            REPOSITORY_DOC.insertDoc(docModel) {}
         }
 
     fun getAllDocs(): LiveData<List<DocModel>> {
         return REPOSITORY_DOC.getDoc
     }
 
-    fun checkDoc():Boolean{
+    fun checkDoc(): Boolean {
         return REPOSITORY_DOC.checkDoc
     }
 
@@ -35,5 +36,6 @@ class DocumentViewModel(application: Application): AndroidViewModel(application)
         viewModelScope.launch(Dispatchers.IO) {
             REPOSITORY_DOC.deleteDoc(docModel) {}
         }
+
 
 }

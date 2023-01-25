@@ -1,24 +1,31 @@
 package com.seiki.android.docholder.screens.work.documents.doc_new_fragment
 
+import android.net.Uri
 import android.view.View
 import android.widget.TextView
 import androidx.fragment.app.FragmentActivity
 import com.seiki.android.docholder.APP
-import com.seiki.android.docholder.LOG
 import com.seiki.android.docholder.R
 import com.seiki.android.docholder.databinding.FragmentDocumentNewBinding
 import com.seiki.android.docholder.model.DocModel
 import com.seiki.android.docholder.screens.work.documents.DocumentViewModel
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
+
 
 
 class ForDoc {
 
+    val zeroBaseInit = DocModel(
+        0, "", "", "", "", "", "",
+        "", "", "", "", "", "", "", "", "", "",
+        "", "", "", "", "", "", "", "", "",
+        "", "", "", "", "", "", "", "", "",
+        "", "", "", "", "", "", "", "", "",
+        "", "", "", "", 0, 0, 0,
+        "","","","")
+
     fun loadPage(actionType:Int?,bind:FragmentDocumentNewBinding,list: List<DocModel>, currentDoc:DocModel){
         // действия при подгрузке страницы конкретного документа
+        // 11 - новый 12 - изменить 13 - открыть
         if (actionType == 11) { ForDoc().preloadDoc(list, bind) }
         if (actionType == 12) { bind.imgBackCircle.setImageResource(R.drawable.ic_back_centr) }
         if (actionType == 12 || actionType == 13) {
@@ -34,14 +41,15 @@ class ForDoc {
     fun clickSave(
         actionType:Int?,list: List<DocModel>,currentDoc:DocModel,
         viewModel:DocumentViewModel, bind:FragmentDocumentNewBinding,
-        idLDNum:Int,ico:Int,color:Int,typeText:String,fioText:String){
+        idLDNum:Int,ico:Int,color:Int,typeText:String,fioText:String,
+        photo1:String,photo2:String,photo3:String,photo4:String){
         // сохранение документа при нажатии на кнопку (нового\внесение изменений)
         if (actionType == 11) {
             list.forEach {
                 if (it.id == 0) {
                     it.id = null
                     it.type = typeText
-                    ForDoc().baseSave(it, bind)
+                    ForDoc().baseSave(it, bind,photo1,photo2,photo3,photo4)
                     it.fio = fioText
                     it.ico = ico
                     it.idLD = idLDNum
@@ -53,7 +61,7 @@ class ForDoc {
         if (actionType == 12) {
             list.forEach {
                 if (it.id == currentDoc.id) {
-                    ForDoc().baseSave(it, bind)
+                    ForDoc().baseSave(it, bind,photo1,photo2,photo3,photo4)
                     it.fio = fioText
                     viewModel.insert(it)
                 }
@@ -62,7 +70,8 @@ class ForDoc {
         ForDoc().backDock()
     }
 
-    fun baseSave(it: DocModel, bind: FragmentDocumentNewBinding) {
+    fun baseSave(it: DocModel, bind: FragmentDocumentNewBinding,
+                 photo1:String,photo2:String,photo3:String,photo4:String) {
         //сохранить в базу
         it.NameDoc = bind.txtHeader.text.toString()
         it.a1 = bind.edInput1.text.toString()
@@ -105,7 +114,10 @@ class ForDoc {
         it.a38 = bind.edInput38.text.toString()
         it.a39 = bind.edInput39.text.toString()
         it.a40 = bind.edInput40.text.toString()
-
+        it.photo1 = photo1
+        it.photo2 = photo2
+        it.photo3 = photo3
+        it.photo4 = photo4
 
     }
 
@@ -152,6 +164,10 @@ class ForDoc {
         bind.edInput38.setText(it.a38)
         bind.edInput39.setText(it.a39)
         bind.edInput40.setText(it.a40)
+        bind.photo1doc.setImageURI(Uri.parse(it.photo1))
+        bind.photo2doc.setImageURI(Uri.parse(it.photo1))
+        bind.photo3doc.setImageURI(Uri.parse(it.photo1))
+        bind.photo4doc.setImageURI(Uri.parse(it.photo1))
 
     }
 
@@ -241,7 +257,6 @@ class ForDoc {
 
     fun preloadDoc(list:List<DocModel>, bind: FragmentDocumentNewBinding) {
         //Предзаполнение основных полей
-        //TODO: НЕ РЕАЛИЗОВАНО
         list.forEach {
             bind.edInput2.setText(it.fio)
             bind.edInput3.setText(it.birth_date)

@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_margin="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -86,6 +87,21 @@
                         android:orientation="horizontal">
 
                         <androidx.cardview.widget.CardView
+                            android:id="@+id/photo1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            app:cardElevation="3dp">
+
+                            <ImageView
+                                android:id="@+id/photo1doc"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_baseline_photo_camera_24" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
                             android:id="@+id/photo2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -93,7 +109,7 @@
                             app:cardElevation="3dp">
 
                             <ImageView
-                                android:id="@+id/imageView18"
+                                android:id="@+id/photo2doc"
                                 android:layout_width="70dp"
                                 android:layout_height="70dp"
                                 android:layout_gravity="center"
@@ -108,7 +124,7 @@
                             app:cardElevation="3dp">
 
                             <ImageView
-                                android:id="@+id/imageView19"
+                                android:id="@+id/photo3doc"
                                 android:layout_width="70dp"
                                 android:layout_height="70dp"
                                 android:layout_gravity="center"
@@ -123,22 +139,7 @@
                             app:cardElevation="3dp">
 
                             <ImageView
-                                android:id="@+id/imageView20"
-                                android:layout_width="70dp"
-                                android:layout_height="70dp"
-                                android:layout_gravity="center"
-                                android:src="@drawable/ic_baseline_photo_camera_24" />
-                        </androidx.cardview.widget.CardView>
-
-                        <androidx.cardview.widget.CardView
-                            android:id="@+id/photo1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            app:cardElevation="3dp">
-
-                            <ImageView
-                                android:id="@+id/imageView17"
+                                android:id="@+id/photo4doc"
                                 android:layout_width="70dp"
                                 android:layout_height="70dp"
                                 android:layout_gravity="center"
@@ -1231,6 +1232,68 @@
             app:layout_constraintEnd_toEndOf="@+id/imgSaveBtn"
             app:layout_constraintStart_toStartOf="@+id/imgWhiteBack"
             app:layout_constraintTop_toTopOf="@+id/imgSaveBtn" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/photoCardDoc"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:cardElevation="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.camera.view.PreviewView
+                    android:id="@+id/photoFinder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/savePhoto"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="Сохранить"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <Button
+                    android:id="@+id/cancelPhoto"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="16dp"
+                    android:backgroundTint="#BF360C"
+                    android:text="Отмена"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/photoViewer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:srcCompat="@tools:sample/backgrounds/scenic"
+                    tools:visibility="visible" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

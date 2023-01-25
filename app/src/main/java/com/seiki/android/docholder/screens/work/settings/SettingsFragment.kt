@@ -11,6 +11,7 @@ import androidx.core.app.ActivityCompat
 import com.seiki.android.docholder.databinding.FragmentSettingsBinding
 import com.seiki.android.docholder.model.DocModel
 import com.seiki.android.docholder.screens.work.documents.DocumentViewModel
+import com.seiki.android.docholder.screens.work.documents.doc_new_fragment.ForDoc
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -69,14 +70,8 @@ class SettingsFragment : Fragment() {
         }
         //кнопка сохранения изменений в аккаунте
         bind.btnSave.setOnClickListener {
-            if (list.isNullOrEmpty()) {
-                list = listOf(DocModel(
-                    0, "", "", "", "", "", "",
-                    "", "", "", "", "", "", "", "", "", "",
-                    "", "", "", "", "", "", "", "", "",
-                    "", "", "", "", "", "", "", "", "",
-                    "", "", "", "", "", "", "", "", "",
-                    "", "", "", "", 0, 0, 0))
+            if (list.isEmpty()) {
+                list = listOf(ForDoc().zeroBaseInit)
             }
 
             list.forEach {

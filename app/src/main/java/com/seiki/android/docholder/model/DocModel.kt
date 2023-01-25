@@ -1,5 +1,6 @@
 package com.seiki.android.docholder.model
 
+import android.net.Uri
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.io.Serializable
@@ -58,4 +59,8 @@ data class DocModel(
     var ico :Int,
     var idLD:Int,
     var bgDoc:Int,
+    var photo1:String,
+    var photo2:String,
+    var photo3:String,
+    var photo4:String,
 ) : Serializable

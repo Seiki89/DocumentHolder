@@ -20,7 +20,11 @@ class Passport {
         bind: FragmentDocumentNewBinding,
         view: View,
         actionType: Int?,
-        currentDoc:DocModel
+        currentDoc:DocModel,
+        photo1:String,
+        photo2:String,
+        photo3:String,
+        photo4:String,
     ) {
         val viewModel = ViewModelProvider(activity)[DocumentViewModel::class.java]
         var list = emptyList<DocModel>()
@@ -52,7 +56,7 @@ class Passport {
         bind.imgSaveBtn.setOnClickListener {
             ForDoc().clickSave(actionType,list,currentDoc,viewModel,bind,
                 1,R.drawable.fd_docks_passport,R.drawable.gradient_doc_red,"main",
-                bind.edInput2.text.toString())
+                bind.edInput2.text.toString(),photo1,photo2,photo3,photo4)
 
         }
     }
