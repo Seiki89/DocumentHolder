@@ -6,10 +6,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.seiki.android.docholder.model.CardModel
-import com.seiki.android.docholder.model.DocModel
-import com.seiki.android.docholder.model.NoteModel
-import com.seiki.android.docholder.model.PassModel
+import com.seiki.android.docholder.model.*
 
 @Dao
 interface DAO {
@@ -46,4 +43,10 @@ interface DAO {
     fun isEmptyDoc(): Boolean
     @Delete
     fun deleteDoc (docModel: DocModel)
+//SettModel
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertSett(settModel: SettModel)
+    @Query("SELECT * FROM Settings")
+    fun getSett(): LiveData<List<SettModel>>
+
 }

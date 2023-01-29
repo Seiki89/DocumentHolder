@@ -3,6 +3,7 @@ package com.seiki.android.docholder.screens.work.documents
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.seiki.android.docholder.REPOSITORY_DOC
 import com.seiki.android.docholder.database.MainDb
@@ -36,6 +37,5 @@ class DocumentViewModel(application: Application): AndroidViewModel(application)
         viewModelScope.launch(Dispatchers.IO) {
             REPOSITORY_DOC.deleteDoc(docModel) {}
         }
-
 
 }

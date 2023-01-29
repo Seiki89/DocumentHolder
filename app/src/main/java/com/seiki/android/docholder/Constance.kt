@@ -7,6 +7,7 @@ import com.seiki.android.docholder.database.repository.card.CardRepository
 import com.seiki.android.docholder.database.repository.doc.DocRepository
 import com.seiki.android.docholder.database.repository.note.NoteRepository
 import com.seiki.android.docholder.database.repository.pass.PassRepository
+import com.seiki.android.docholder.database.repository.sett.SettRepository
 import com.seiki.android.docholder.screens.work.WorkActivity
 import java.io.Serializable
 
@@ -18,6 +19,7 @@ lateinit var REPOSITORY_NOTE: NoteRepository
 lateinit var REPOSITORY_PASS: PassRepository
 lateinit var REPOSITORY_CARD: CardRepository
 lateinit var REPOSITORY_DOC: DocRepository
+lateinit var REPOSITORY_SETT: SettRepository
 
 fun <T : Serializable?> Bundle.getSerializableCompat(key: String, clazz: Class<T>): T {
     //проверка версии, перед пробросом

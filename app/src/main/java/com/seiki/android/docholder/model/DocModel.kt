@@ -64,3 +64,4 @@ data class DocModel(
     var photo3:String,
     var photo4:String,
 ) : Serializable
+

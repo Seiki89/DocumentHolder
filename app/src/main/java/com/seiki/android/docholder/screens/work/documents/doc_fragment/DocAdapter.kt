@@ -1,6 +1,7 @@
 package com.seiki.android.docholder.screens.work.documents.doc_fragment
 
 import android.app.Application
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,7 +15,7 @@ import com.seiki.android.docholder.R
 import com.seiki.android.docholder.model.DocModel
 import com.seiki.android.docholder.screens.work.documents.DocumentViewModel
 import com.seiki.android.docholder.screens.work.documents.doc_new_fragment.ForDoc
-
+import java.io.File
 
 
 class DocAdapter() : RecyclerView.Adapter<DocAdapter.DocViewHolder>() {
@@ -70,6 +71,11 @@ class DocAdapter() : RecyclerView.Adapter<DocAdapter.DocViewHolder>() {
         }
 
         holder.btnDel.setOnLongClickListener {
+            stringToFileWithDelete(differ.currentList[position].photo1)
+            stringToFileWithDelete(differ.currentList[position].photo2)
+            stringToFileWithDelete(differ.currentList[position].photo3)
+            stringToFileWithDelete(differ.currentList[position].photo4)
+
             viewModel.delete(listDoc[holder.adapterPosition]) {}
             val listAfterDel = mutableListOf<DocModel>()
             for (i in 0 until  differ.currentList.size){
@@ -96,6 +102,13 @@ class DocAdapter() : RecyclerView.Adapter<DocAdapter.DocViewHolder>() {
         }
     }
     val differ = AsyncListDiffer(this, diffCallback)
+
+    private fun stringToFileWithDelete(value: String){
+        val uri = Uri.parse(value)
+        val path = uri.path
+        val file = File(path!!)
+        file.delete()
+    }
 }
 
 

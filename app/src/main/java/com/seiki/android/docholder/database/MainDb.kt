@@ -4,13 +4,9 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.seiki.android.docholder.model.*
 
-import com.seiki.android.docholder.model.CardModel
-import com.seiki.android.docholder.model.DocModel
-import com.seiki.android.docholder.model.NoteModel
-import com.seiki.android.docholder.model.PassModel
-
-@Database(entities = [NoteModel::class,PassModel::class,CardModel::class,DocModel::class], version = 1)
+@Database(entities = [NoteModel::class,PassModel::class,CardModel::class,DocModel::class,SettModel::class], version = 1)
 abstract class MainDb : RoomDatabase() {
     abstract fun getDao(): DAO
 
