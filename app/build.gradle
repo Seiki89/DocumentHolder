@@ -36,7 +36,19 @@ android {
     }
 }
 
+
+
+
 dependencies {
+    constraints {
+        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0") {
+            because("kotlin-stdlib-jdk7 is now a part of kotlin-stdlib")
+        }
+        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0") {
+            because("kotlin-stdlib-jdk8 is now a part of kotlin-stdlib")
+        }
+    }
+    implementation 'com.github.MikeOrtiz:TouchImageView:3.3'
 
     implementation "androidx.biometric:biometric:1.1.0"
     implementation "androidx.camera:camera-camera2:1.2.1"

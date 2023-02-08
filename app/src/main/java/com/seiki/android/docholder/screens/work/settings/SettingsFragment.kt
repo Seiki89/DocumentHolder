@@ -1,31 +1,22 @@
 package com.seiki.android.docholder.screens.work.settings
 
-import android.app.Application
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatDelegate
+import android.widget.Toast
 import androidx.core.app.ActivityCompat
-import androidx.lifecycle.ViewModelProvider
 import com.seiki.android.docholder.databinding.FragmentSettingsBinding
-import com.seiki.android.docholder.model.DocModel
-import com.seiki.android.docholder.model.SettModel
-import com.seiki.android.docholder.screens.work.documents.DocumentViewModel
-import com.seiki.android.docholder.screens.work.documents.doc_new_fragment.ForDoc
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 
 class SettingsFragment : Fragment() {
     private lateinit var bind: FragmentSettingsBinding
-    private var listDocModel = listOf<DocModel>()
-    private var listSettModel = listOf<SettModel>()
-    private val viewModelDoc = DocumentViewModel(Application())
-    private val viewModelSet = SettingsViewModel(Application())
+    private lateinit var logic : SettVMLogic
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,142 +28,160 @@ class SettingsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val viewModel = ViewModelProvider(this)[SettingsViewModel::class.java]
-        viewModel.initDataBase()
 
-        viewModelDoc.getAllDocs().observe(viewLifecycleOwner) { listDocModel = it }
-        viewModelSet.getAllSett().observe(viewLifecycleOwner) { listSettModel = it }
+        logic = SettVMLogic(this@SettingsFragment)
 
+        logic.initDB()
         startAnimation()
-        account()
-        theme()
-        login()
 
-        bind.btnExit.setOnClickListener { ActivityCompat.finishAffinity(requireActivity()) }
-
-    }
-
-    private fun login(){
         bind.btnLogin.setOnClickListener {
-            if (bind.SetCard.visibility == View.GONE) {
-                bind.SetCard.visibility = View.VISIBLE
-            }
-            bind.SetCard.animate().apply {
-                duration = 200
-                rotationXBy(360f)
-            }
-            bind.apply {
-                btnDayTheme.visibility = View.GONE
-                btnGradienTheme.visibility = View.GONE
-                btnDarkTheme.visibility = View.GONE
-                edPreFIO.visibility = View.GONE
-                edPreBdate.visibility = View.GONE
-                edPreBPos.visibility = View.GONE
-                edPreSex.visibility = View.GONE
-                btnSave.visibility = View.GONE
-                oldPass.visibility = View.VISIBLE
-                newPass.visibility = View.VISIBLE
-                btnSavePass.visibility = View.VISIBLE
-                switchPass.visibility = View.VISIBLE
-                switchBio.visibility = View.VISIBLE
-            }
-        }
-    }
-
-    private fun theme() {
-        //кнопка смены темы
-        bind.btnChangeTheme.setOnClickListener {
-            if (bind.SetCard.visibility == View.GONE) {
-                bind.SetCard.visibility = View.VISIBLE
-            }
-            bind.SetCard.animate().apply {
-                duration = 200
-                rotationXBy(360f)
-            }
-            bind.apply {
-                btnDayTheme.visibility = View.VISIBLE
-                btnGradienTheme.visibility = View.VISIBLE
-                btnDarkTheme.visibility = View.VISIBLE
-                edPreFIO.visibility = View.GONE
-                edPreBdate.visibility = View.GONE
-                edPreBPos.visibility = View.GONE
-                edPreSex.visibility = View.GONE
-                btnSave.visibility = View.GONE
-                oldPass.visibility = View.GONE
-                newPass.visibility = View.GONE
-                btnSavePass.visibility = View.GONE
-                switchPass.visibility = View.GONE
-                switchBio.visibility = View.GONE
-            }
+            loginButtonInit()
+            bind.oldPass.hint=logic.login()[0]
+            bind.newPass.hint=logic.login()[1]
         }
 
-        bind.btnDarkTheme.setOnClickListener {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-        }
-        bind.btnDayTheme.setOnClickListener {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-        }
-    }
+        bind.btnSavePass.setOnClickListener { saveLoginInit() }
 
-    private fun account() {
-        //настройки аккаунта
-        CoroutineScope(Dispatchers.Main).launch {
-            delay(100)
-            //презагрузка данных аккаунта
-            listDocModel.forEach {
-                if (it.id == 0) {
-                    bind.edPreFIO.setText(it.fio)
-                    bind.edPreBdate.setText(it.birth_date)
-                    bind.edPreBPos.setText(it.birth_pos)
-                    bind.edPreSex.setText(it.sex)
-                }
-            }
-        }
         bind.btnAcc.setOnClickListener {
-            if (bind.SetCard.visibility == View.GONE) {
-                bind.SetCard.visibility = View.VISIBLE
-            }
-            bind.SetCard.animate().apply {
-                duration = 200
-                rotationXBy(360f)
-            }
-            bind.apply {
-                btnDayTheme.visibility = View.GONE
-                btnGradienTheme.visibility = View.GONE
-                btnDarkTheme.visibility = View.GONE
-                edPreFIO.visibility = View.VISIBLE
-                edPreBdate.visibility = View.VISIBLE
-                edPreBPos.visibility = View.VISIBLE
-                edPreSex.visibility = View.VISIBLE
-                btnSave.visibility = View.VISIBLE
-                oldPass.visibility = View.GONE
-                newPass.visibility = View.GONE
-                btnSavePass.visibility = View.GONE
-                switchPass.visibility = View.GONE
-                switchBio.visibility = View.GONE
-            }
+            accountButtonInit()
+            //logic.account()
+
         }
+
         bind.btnSave.setOnClickListener {
-            if (listDocModel.isEmpty()) {
-                listDocModel = listOf(ForDoc().zeroBaseInit)
+            logic.saveAccount(
+                fio = bind.edPreFIO.text.toString(),
+                b_date = bind.edPreBdate.text.toString(),
+                b_pos = bind.edPreBPos.text.toString(),
+                sex = bind.edPreSex.text.toString()
+            )
+            saveAccInit()
+        }
+
+        bind.btnExit.setOnClickListener {
+            ActivityCompat.finishAffinity(requireActivity())
+        }
+    }
+
+    private fun saveLoginInit() {
+        when (logic.saveLogin(
+            oldPass = bind.oldPass.text.toString(),
+            newPass = bind.newPass.text.toString(),
+            switchPass = bind.switchPass.isChecked,
+            switchBio = bind.switchBio.isChecked
+        )) {
+            1 -> {
+                CoroutineScope(Dispatchers.Main).launch {
+                    bind.btnSavePass.animate().apply {
+                        duration = 300
+                        rotationYBy(360f)
+                    }
+                }
+                bind.btnSavePass.text = "Сохранено!"
+            }
+            2 -> {
+                Toast.makeText(requireContext(), "Ошибка: пароли не совпадают, или не введены",
+                    Toast.LENGTH_LONG).show()
+            }
+            3 -> {
+                CoroutineScope(Dispatchers.Main).launch {
+                    bind.btnSavePass.animate().apply {
+                        duration = 300
+                        rotationYBy(360f)
+                    }
+                }
+                bind.btnSavePass.text = "Сохранено!"
+            }
+            4 -> {
+                Toast.makeText(requireContext(),
+                    "Ошибка: пароли не совпадают или не введен неверный новый пароль",
+                    Toast.LENGTH_LONG).show()
             }
 
-            listDocModel.forEach {
-                it.fio = bind.edPreFIO.text.toString()
-                it.birth_date = bind.edPreBdate.text.toString()
-                it.birth_pos = bind.edPreBPos.text.toString()
-                it.sex = bind.edPreSex.text.toString()
-                viewModelDoc.insert(it)
-                bind.btnSave.animate().apply {
-                    duration = 300
-                    rotationYBy(360f)
-                }
-                bind.btnSave.text = "Сохранено!"
-            }
         }
+    }
+
+    private fun saveAccInit(){
+        bind.btnSave.animate().apply {
+            duration = 300
+            rotationYBy(360f)
+        }
+        bind.btnSave.text = "Сохранено!"
+    }
+
+    private fun loginButtonInit() {
+        if (bind.SetCard.visibility == View.GONE) {
+            bind.SetCard.visibility = View.VISIBLE
+        }
+        bind.SetCard.animate().apply {
+            duration = 200
+            rotationXBy(360f)
+        }
+        loginVisible()
+        accountInVisible()
+    }
+
+    private fun loginVisible() {
+        bind.apply {
+            oldPass.visibility = View.VISIBLE
+            newPass.visibility = View.VISIBLE
+            switchPass.visibility = View.VISIBLE
+            switchBio.visibility = View.VISIBLE
+            btnSavePass.visibility = View.VISIBLE
+        }
+    }
+
+    private fun loginInVisible() {
+        bind.apply {
+            oldPass.visibility = View.GONE
+            newPass.visibility = View.GONE
+            switchPass.visibility = View.GONE
+            switchBio.visibility = View.GONE
+            btnSavePass.visibility = View.GONE
+        }
+    }
+
+    private fun accountInVisible() {
+        bind.apply {
+            edPreFIO.visibility = View.GONE
+            edPreBdate.visibility = View.GONE
+            edPreBPos.visibility = View.GONE
+            edPreSex.visibility = View.GONE
+            btnSave.visibility = View.GONE
+        }
+    }
+
+    private fun accountVisible() {
+        bind.apply {
+            edPreFIO.visibility = View.VISIBLE
+            edPreBdate.visibility = View.VISIBLE
+            edPreBPos.visibility = View.VISIBLE
+            edPreSex.visibility = View.VISIBLE
+            btnSave.visibility = View.VISIBLE
+        }
+    }
+
+    private fun accountButtonInit() {
+        if (bind.SetCard.visibility == View.GONE) {
+            bind.SetCard.visibility = View.VISIBLE
+        }
+        bind.SetCard.animate().apply {
+            duration = 200
+            rotationXBy(360f)
+        }
+        accountVisible()
+        loginInVisible()
+
+        val getList = logic.account()
+
+        bind.edPreFIO.setText(getList["fio"])
+        bind.edPreBdate.setText(getList["b_date"])
+        bind.edPreBPos.setText(getList["b_pos"])
+        bind.edPreSex.setText(getList["sex"])
     }
 
     private fun startAnimation() {
+        //стартовая анимация
         bind.header.animate().apply {
             duration = 400
             rotationXBy(360f)

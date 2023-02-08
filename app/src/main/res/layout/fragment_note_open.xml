@@ -103,6 +103,7 @@
                     android:background="@drawable/button_round"
                     android:elevation="10dp"
                     android:src="@drawable/button_round"
+                    android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/imgBtnDel" />
 
@@ -112,6 +113,7 @@
                     android:layout_height="30dp"
                     android:elevation="11dp"
                     android:src="@drawable/ic_camera"
+                    android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView6"
                     app:layout_constraintEnd_toEndOf="@+id/imageView6"
                     app:layout_constraintStart_toStartOf="@+id/imageView6"

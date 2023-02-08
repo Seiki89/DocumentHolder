@@ -33,6 +33,12 @@ class CardFragment : Fragment() {
         viewModel.initDataBase()
         init()
 
+        bind.txtBtnCircle.setOnClickListener {
+            //создать новую карту
+            APP.navController.navigate(R.id.action_cardFragment_to_cardNewFragment)
+
+        }
+
     }
 
     fun click(cardModel: CardModel){
@@ -52,15 +58,8 @@ class CardFragment : Fragment() {
             adapter.setList(listCards.asReversed())
         }
 
-
         animationStart()
 
-
-        bind.txtBtnCircle.setOnClickListener {
-
-            APP.navController.navigate(R.id.action_cardFragment_to_cardNewFragment)
-            //создать новую карту
-        }
     }
 
     private fun animationStart() {

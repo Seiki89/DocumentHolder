@@ -24,38 +24,44 @@ class CardNewFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        init()
-    }
-
-    private fun init() {
         val viewModel = ViewModelProvider(this)[CardNewViewModel::class.java]
 
         animationStart()
 
+        bind.imgSaveBtn.setOnClickListener { saveAndExit(viewModel) }
 
         bind.imgBtnCircle.setOnClickListener {
             //выйти без сохранения
             APP.navController.navigate(R.id.action_cardNewFragment_to_cardFragment)
         }
-
-        bind.imgSaveBtn.setOnClickListener {
-            //сохранить и выйти
-            val bank = bind.edBank.text.toString()
-            val num1 = bind.edNum1.text.toString()
-            val num2 = bind.edNum2.text.toString()
-            val num3 = bind.edNum3.text.toString()
-            val num4 = bind.edNum4.text.toString()
-            val date1 = bind.edDate1.text.toString()
-            val date2 = bind.edDate2.text.toString()
-            val name = bind.edName.text.toString()
-            val cvc = bind.edCvc.text.toString()
-            val pin = bind.edPin.text.toString()
-            viewModel.insert(CardModel(null,bank, num1, num2, num3, num4, date1, date2, name, cvc, pin))
-
-            APP.navController.navigate(R.id.action_cardNewFragment_to_cardFragment)
-        }
     }
 
+    private fun saveAndExit(viewModel: CardNewViewModel) {
+        //сохранить и выйти
+        val bank = bind.edBank.text.toString()
+        val num1 = bind.edNum1.text.toString()
+        val num2 = bind.edNum2.text.toString()
+        val num3 = bind.edNum3.text.toString()
+        val num4 = bind.edNum4.text.toString()
+        val date1 = bind.edDate1.text.toString()
+        val date2 = bind.edDate2.text.toString()
+        val name = bind.edName.text.toString()
+        val cvc = bind.edCvc.text.toString()
+        val pin = bind.edPin.text.toString()
+        viewModel.insert(CardModel(null,
+            bank,
+            num1,
+            num2,
+            num3,
+            num4,
+            date1,
+            date2,
+            name,
+            cvc,
+            pin))
+
+        APP.navController.navigate(R.id.action_cardNewFragment_to_cardFragment)
+    }
 
     private fun animationStart() {
         bind.imgSaveBtn.animate().apply {

@@ -28,7 +28,12 @@ class PassFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         init()
+
+        bind.txtBtnCircle.setOnClickListener {
+            APP.navController.navigate(R.id.action_passFragment_to_passNewFragment)
+        }
     }
 
     fun click(passModel: PassModel){
@@ -50,10 +55,6 @@ class PassFragment : Fragment() {
             adapter.setList(listPass.asReversed())
         }
 
-        bind.txtBtnCircle.setOnClickListener {
-            //создать новый пароль
-            APP.navController.navigate(R.id.action_passFragment_to_passNewFragment)
-        }
     }
 
     private fun animationStart() {

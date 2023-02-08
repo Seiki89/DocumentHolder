@@ -36,7 +36,6 @@ class PassAdapter: RecyclerView.Adapter<PassAdapter.PassViewHolder>() {
         holder.descHolder.text = listPass[position].login
 
         holder.delHolder.setOnClickListener {
-            //удалить пароль
             viewModel.delete(listPass[holder.adapterPosition]){}
         }
     }

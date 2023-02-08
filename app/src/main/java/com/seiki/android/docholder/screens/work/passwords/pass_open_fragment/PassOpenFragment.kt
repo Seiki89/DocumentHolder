@@ -36,34 +36,37 @@ class PassOpenFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         currentNote = arguments?.getSerializableCompat("Pass", PassModel::class.java) as PassModel
+        val viewModel = ViewModelProvider(this)[PassOpenViewModel::class.java]
 
         init()
-    }
-
-    private fun init() {
-        val viewModel = ViewModelProvider(this)[PassOpenViewModel::class.java]
-        animationStart()
-
-        bind.txtHeader.text = currentNote.service
-        bind.edTxtLogin.setText(currentNote.login)
-        bind.edTxtPass.setText(currentNote.password)
 
         bind.imgBtnCircle.setOnClickListener {
             //выйти не сохраняя
             APP.navController.navigate(R.id.action_passOpenFragment_to_passFragment)
         }
 
-        bind.imgSaveBtn.setOnClickListener {
-            //сохранить и выйти
-            val id = currentNote.id
-            val service = currentNote.service
-            val login = bind.edTxtLogin.text.toString()
-            val pass = bind.edTxtPass.text.toString()
-            viewModel.insert(PassModel(id,service,login,pass)){}
-            APP.navController.navigate(R.id.action_passOpenFragment_to_passFragment)
-        }
+        bind.imgSaveBtn.setOnClickListener { saveAndExit(viewModel) }
+
     }
 
+    private fun saveAndExit(viewModel: PassOpenViewModel) {
+        //сохранить и выйти
+        val id = currentNote.id
+        val service = currentNote.service
+        val login = bind.edTxtLogin.text.toString()
+        val pass = bind.edTxtPass.text.toString()
+        viewModel.insert(PassModel(id, service, login, pass)) {}
+        APP.navController.navigate(R.id.action_passOpenFragment_to_passFragment)
+    }
+
+    private fun init() {
+        animationStart()
+
+        bind.txtHeader.text = currentNote.service
+        bind.edTxtLogin.setText(currentNote.login)
+        bind.edTxtPass.setText(currentNote.password)
+
+    }
 
     private fun animationStart() {
         //стартовая анимация

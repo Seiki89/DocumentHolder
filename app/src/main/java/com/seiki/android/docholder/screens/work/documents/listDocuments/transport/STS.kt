@@ -30,7 +30,6 @@ class STS {
         bind.apply {
             txtHeader.text = "СТС"
             txtInfo1.text = "Серия и номер:"
-            divLn1.visibility = View.VISIBLE
             txtInfo2.text = "Регистрационный знак:"
             txtInfo3.text = "Идентифекацмонный номер (VIN):"
             txtInfo4.text = "Марка:"

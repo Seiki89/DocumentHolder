@@ -94,7 +94,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="Настройте аккаунт перед заполнением документов"
+                                android:text="Настройте вход в приложение и аккаунт перед заполнением документов"
                                 android:textColor="@color/white"
                                 android:textSize="16sp"
                                 android:textStyle="bold"

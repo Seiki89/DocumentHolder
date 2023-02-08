@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".document.SelectNewDocFragment">
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -97,15 +96,18 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_document" />
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:foregroundGravity="center_horizontal"
+                            android:src="@drawable/fd_docks_passport" />
 
                         <TextView
                             android:id="@+id/textView11"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:layout_marginStart="8dp"
                             android:layout_weight="1"
+                            android:gravity="center_vertical"
                             android:text=" Паспорт"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
@@ -118,14 +120,17 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_document" />
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/fd_docks_b_sert" />
 
                         <TextView
                             android:id="@+id/textView15"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="8dp"
+                            android:singleLine="true"
                             android:text=" Свидетельство о рождении"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
@@ -139,14 +144,16 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_document" />
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/fd_docks_snils" />
 
                         <TextView
                             android:id="@+id/textView34"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="8dp"
+                            android:gravity="center_vertical"
                             android:text=" СНИЛС"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
@@ -160,14 +167,16 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_document" />
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/fd_docks_military_tick" />
 
                         <TextView
                             android:id="@+id/textView13"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="8dp"
+                            android:gravity="center_vertical"
                             android:text=" Военный билет"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
@@ -181,14 +190,16 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_document" />
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/fd_docks_international_pas" />
 
                         <TextView
                             android:id="@+id/textView12"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="8dp"
+                            android:gravity="center_vertical"
                             android:text=" Загранпаспорт"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
@@ -202,14 +213,16 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_document" />
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/fd_docks_visa" />
 
                         <TextView
                             android:id="@+id/textView37"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="8dp"
                             android:text=" Виза"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
@@ -223,14 +236,17 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_document" />
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/fd_docks_service_passp" />
 
                         <TextView
                             android:id="@+id/textView16"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="8dp"
+                            android:singleLine="true"
                             android:text=" Дипломатический паспорт"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
@@ -244,14 +260,17 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_document" />
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/fd_docks_servisce_cert" />
 
                         <TextView
                             android:id="@+id/textView18"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="8dp"
+                            android:singleLine="true"
                             android:text=" Удостоверение военнослужащего"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
@@ -265,14 +284,17 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_document" />
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/fd_docks_seaman" />
 
                         <TextView
                             android:id="@+id/textView19"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="8dp"
+                            android:singleLine="true"
                             android:text=" Удостоверение моряка"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
@@ -286,14 +308,17 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_document" />
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/fd_docks_service_passp" />
 
                         <TextView
                             android:id="@+id/textView17"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="8dp"
+                            android:singleLine="true"
                             android:text=" Служебный паспорт"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
@@ -328,15 +353,18 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
                             android:hapticFeedbackEnabled="false"
-                            android:src="@drawable/ic_document" />
+                            android:src="@drawable/fd_transport_driver_lic" />
 
                         <TextView
                             android:id="@+id/textView27"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="8dp"
+                            android:singleLine="true"
                             android:text=" Водительское удостоверение"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
@@ -350,14 +378,17 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_document" />
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/fd_transport_sts" />
 
                         <TextView
                             android:id="@+id/textView25"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="8dp"
+                            android:singleLine="true"
                             android:text=" СТС"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
@@ -371,14 +402,17 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_document" />
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/fd_transport_pts" />
 
                         <TextView
                             android:id="@+id/textView26"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="8dp"
+                            android:singleLine="true"
                             android:text=" ПТС"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
@@ -392,14 +426,17 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_document" />
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/fd_transport_osago" />
 
                         <TextView
                             android:id="@+id/textView23"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="8dp"
+                            android:singleLine="true"
                             android:text=" Осаго"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
@@ -413,14 +450,17 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_document" />
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/fd_transport_kasko" />
 
                         <TextView
                             android:id="@+id/textView24"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="8dp"
+                            android:singleLine="true"
                             android:text=" Каско"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
@@ -436,7 +476,7 @@
                     <TextView
                         android:id="@+id/textView28"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:text="Налоговая:"
                         android:textColor="@color/black"
                         android:textSize="24sp"
@@ -455,14 +495,17 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_document" />
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/fd_taxes_inn" />
 
                         <TextView
                             android:id="@+id/textView36"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="8dp"
+                            android:singleLine="true"
                             android:text=" ИНН"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
@@ -476,14 +519,17 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_document" />
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/fd_taxes_inn" />
 
                         <TextView
                             android:id="@+id/textView35"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="8dp"
+                            android:singleLine="true"
                             android:text=" ИНН(юр.лицо)"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
@@ -497,14 +543,17 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_document" />
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/fd_taxes_ogrn" />
 
                         <TextView
                             android:id="@+id/textView32"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="8dp"
+                            android:singleLine="true"
                             android:text=" ОГРНИП"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
@@ -518,14 +567,17 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_document" />
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/fd_taxes_ogrn" />
 
                         <TextView
                             android:id="@+id/textView31"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="8dp"
+                            android:singleLine="true"
                             android:text=" ОГРН"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
@@ -539,14 +591,17 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_document" />
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/fd_taxes_swift" />
 
                         <TextView
                             android:id="@+id/textView30"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="8dp"
+                            android:singleLine="true"
                             android:text=" Реквизиты Swift"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
@@ -560,14 +615,17 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_document" />
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/fd_taxes_company_card" />
 
                         <TextView
                             android:id="@+id/textView33"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="8dp"
+                            android:singleLine="true"
                             android:text=" Карточка предприятия"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
@@ -581,14 +639,17 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_document" />
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/fd_taxes_bank_detail" />
 
                         <TextView
                             android:id="@+id/textView29"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="8dp"
+                            android:singleLine="true"
                             android:text=" Реквизиты cчета РФ"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
@@ -605,6 +666,7 @@
                         android:id="@+id/textView38"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
                         android:text="Образование:"
                         android:textColor="@color/black"
                         android:textSize="24sp"
@@ -623,14 +685,17 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_document" />
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/fd_education_base" />
 
                         <TextView
                             android:id="@+id/textView40"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="8dp"
+                            android:singleLine="true"
                             android:text=" Аттестат об общем образовании"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
@@ -644,14 +709,17 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_document" />
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/fd_education_high" />
 
                         <TextView
                             android:id="@+id/textView39"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="8dp"
+                            android:singleLine="true"
                             android:text=" Диплом о высшем образовании"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
@@ -668,6 +736,7 @@
                         android:id="@+id/textView41"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
                         android:text="Медицина:"
                         android:textColor="@color/black"
                         android:textSize="24sp"
@@ -686,14 +755,17 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_document" />
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/fd_medicine_med_card" />
 
                         <TextView
                             android:id="@+id/textView42"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="8dp"
+                            android:singleLine="true"
                             android:text="Мед. Карта"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
@@ -707,14 +779,17 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_document" />
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/fd_medicine_oms" />
 
                         <TextView
                             android:id="@+id/textView43"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="8dp"
+                            android:singleLine="true"
                             android:text="Полис Омс"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
@@ -728,14 +803,17 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_document" />
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/fd_medicine_oms" />
 
                         <TextView
                             android:id="@+id/textView44"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="8dp"
+                            android:singleLine="true"
                             android:text="Полис Омс (новый)"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
@@ -749,14 +827,17 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_document" />
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/fd_medicine_vzr" />
 
                         <TextView
                             android:id="@+id/textView45"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="8dp"
+                            android:singleLine="true"
                             android:text=" Страховка ВЗР"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
@@ -770,14 +851,17 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_document" />
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/fd_medicine_dms" />
 
                         <TextView
                             android:id="@+id/textView46"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="8dp"
+                            android:singleLine="true"
                             android:text=" Полис ДМС"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
@@ -794,6 +878,7 @@
                         android:id="@+id/textView14"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
                         android:text="Животные:"
                         android:textColor="@color/black"
                         android:textSize="24sp"
@@ -811,14 +896,17 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_document" />
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/fd_animal_vet_pass" />
 
                         <TextView
                             android:id="@+id/textView53"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="8dp"
+                            android:singleLine="true"
                             android:text="Ветпаспорт"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
@@ -835,6 +923,7 @@
                         android:id="@+id/textView20"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
                         android:text="Брак:"
                         android:textColor="@color/black"
                         android:textSize="24sp"
@@ -853,14 +942,17 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_document" />
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/fd_marriage_marr" />
 
                         <TextView
                             android:id="@+id/textView50"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="8dp"
+                            android:singleLine="true"
                             android:text="Свидетельство о браке"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
@@ -874,14 +966,17 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_document" />
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/fd_marriage_dev" />
 
                         <TextView
                             android:id="@+id/textView51"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="8dp"
+                            android:singleLine="true"
                             android:text="Свидетельство о разводе"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
@@ -898,6 +993,7 @@
                         android:id="@+id/textView47"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
                         android:text="Охота:"
                         android:textColor="@color/black"
                         android:textSize="24sp"
@@ -916,14 +1012,17 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_document" />
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/fd_hunting_ooop" />
 
                         <TextView
                             android:id="@+id/textView48"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="8dp"
+                            android:singleLine="true"
                             android:text="Лицензия на оружие"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
@@ -937,14 +1036,17 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_document" />
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/fd_hunting_hunting_tick" />
 
                         <TextView
                             android:id="@+id/textView49"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="8dp"
+                            android:singleLine="true"
                             android:text="Охотничий билет"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
@@ -958,14 +1060,17 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:src="@drawable/ic_document" />
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/fd_hunting_roh" />
 
                         <TextView
                             android:id="@+id/textView52"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="8dp"
+                            android:singleLine="true"
                             android:text="Разрешение РОХа"
                             android:textColor="@color/black"
                             android:textSize="20sp" />

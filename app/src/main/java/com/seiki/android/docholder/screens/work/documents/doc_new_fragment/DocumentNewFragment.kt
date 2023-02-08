@@ -1,5 +1,6 @@
 package com.seiki.android.docholder.screens.work.documents.doc_new_fragment
 
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
@@ -9,11 +10,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
-import androidx.camera.core.CameraSelector
-import androidx.camera.core.ImageCapture
-import androidx.camera.core.ImageCaptureException
-import androidx.camera.core.Preview
+import androidx.camera.core.*
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -105,6 +104,34 @@ class DocumentNewFragment : Fragment() {
         buttonsInit(actionType)
         delPhoto()
 
+
+        if (actionType == 13){bind.sharedDoc.visibility = View.VISIBLE}
+        bind.sharedDoc.setOnClickListener { share() }
+
+    }
+
+    private fun share(){
+        val txtList = mutableListOf<TextView>()
+        val edList = mutableListOf<TextView>()
+        var sendText = ""
+        for (i in 0..40) {
+            val idString = "txtInfo$i"
+            val idString2 = "edInput$i"
+            val txtID = resources.getIdentifier(idString, "id", requireActivity().packageName)
+            val edID = resources.getIdentifier(idString2, "id", requireActivity().packageName)
+            txtList.add(requireActivity().findViewById(txtID))
+            edList.add(requireActivity().findViewById(edID))
+
+
+            if (edList[i].text.isNotBlank()) {
+                sendText += "\n" + txtList[i].text.toString() + "\n" + edList[i].text.toString()
+            }
+        }
+        val intent = Intent()
+        intent.action = Intent.ACTION_SEND
+        intent.putExtra(Intent.EXTRA_TEXT, sendText)
+        intent.type = "text/plain"
+        startActivity(Intent.createChooser(intent, "Share To:"))
     }
 
     private fun delPhoto() {
@@ -308,7 +335,8 @@ class DocumentNewFragment : Fragment() {
         bind.photo1.setOnClickListener {
             if (actionType == 13) {
                 seePhoto(photoData.messagePhoto1.observe(activity as LifecycleOwner) {
-                    bind.photoViewer.setImageURI(Uri.parse(it)) })
+                    bind.photoViewer.setImageURI(Uri.parse(it))
+                })
             } else  {
                 numPhotoButton = 1
                 startPhoto()
@@ -454,6 +482,7 @@ class DocumentNewFragment : Fragment() {
             }
         }, ContextCompat.getMainExecutor(requireContext())
         )
+
     }
 
     private fun takePhoto(value: String, image: ImageView) {
@@ -468,7 +497,7 @@ class DocumentNewFragment : Fragment() {
             )
 
         val outputOption = ImageCapture.OutputFileOptions.Builder(photoFile)
-            .build()                //подготовка - помещаем изображение в файл
+            .build()
 
         imageCapture.takePicture(
             outputOption,

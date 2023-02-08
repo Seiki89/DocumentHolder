@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProvider
 import com.seiki.android.docholder.APP
 import com.seiki.android.docholder.R
@@ -13,7 +12,7 @@ import com.seiki.android.docholder.databinding.FragmentNoteNewBinding
 import com.seiki.android.docholder.model.NoteModel
 
 
-class NoteNewFragment() : Fragment() {
+class NoteNewFragment : Fragment() {
     private lateinit var bind: FragmentNoteNewBinding
 
     override fun onCreateView(
@@ -26,25 +25,24 @@ class NoteNewFragment() : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        init()
-    }
-
-    private fun init() {
         val viewModel = ViewModelProvider(this)[NoteNewViewModel::class.java]
+
         animationStart()
+
+        bind.imgSaveBtn.setOnClickListener { saveAndExit(viewModel) }
 
         bind.imgBtnCircle.setOnClickListener {
             //выйти не сохраняя
             APP.navController.navigate(R.id.action_noteNewFragment_to_noteFragment)
         }
+    }
 
-        bind.imgSaveBtn.setOnClickListener {
-            //сохранить и выйти
-            val name = bind.edTxtName.text.toString()
-            val text = bind.edTxtText.text.toString()
-            viewModel.insert(NoteModel(null,name,text,0)){}
-            APP.navController.navigate(R.id.action_noteNewFragment_to_noteFragment)
-        }
+    private fun saveAndExit(viewModel: NoteNewViewModel) {
+        //сохранить и выйти
+        val name = bind.edTxtName.text.toString()
+        val text = bind.edTxtText.text.toString()
+        viewModel.insert(NoteModel(null, name, text, 0)) {}
+        APP.navController.navigate(R.id.action_noteNewFragment_to_noteFragment)
     }
 
     private fun animationStart() {

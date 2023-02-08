@@ -23,18 +23,15 @@ class SelectNewDocFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        init()
+
+        animationStart()
+        selectDocument()
 
         bind.imgBtnCircle.setOnClickListener {
             APP.navController.navigate(R.id.action_selectNewDocFragment_to_documentFragment)
         }
 
 
-    }
-
-    private fun init() {
-        animationStart()
-        selectDocument()
     }
 
     private fun setDoc(value: Int) {

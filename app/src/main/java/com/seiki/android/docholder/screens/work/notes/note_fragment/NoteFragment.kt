@@ -28,7 +28,13 @@ class NoteFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         init()
+
+        bind.txtBtnCircle.setOnClickListener {
+            //создать новую заметку
+            APP.navController.navigate(R.id.action_noteFragment_to_noteNewFragment)
+        }
     }
 
     fun click(noteModel: NoteModel){
@@ -48,11 +54,6 @@ class NoteFragment : Fragment() {
         recyclerView.adapter = adapter
         viewModel.getAllNotes().observe(viewLifecycleOwner) { listNotes ->
             adapter.setList(listNotes.asReversed())
-        }
-
-        bind.txtBtnCircle.setOnClickListener {
-            //создать новую заметку
-            APP.navController.navigate(R.id.action_noteFragment_to_noteNewFragment)
         }
     }
 

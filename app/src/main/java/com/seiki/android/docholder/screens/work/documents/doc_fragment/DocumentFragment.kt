@@ -34,7 +34,12 @@ class DocumentFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         init()
+
+        bind.imgBtnCircle.setOnClickListener {
+            APP.navController.navigate(R.id.action_documentFragment_to_selectNewDocFragment)
+        }
     }
 
     fun click(docModel: DocModel,type:Int){
@@ -62,10 +67,6 @@ class DocumentFragment : Fragment() {
             medicineRecycle(list)
             marriageRecycle(list)
             huntingRecycle(list)
-        }
-
-        bind.imgBtnCircle.setOnClickListener {
-            APP.navController.navigate(R.id.action_documentFragment_to_selectNewDocFragment)
         }
 
     }

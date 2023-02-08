@@ -42,14 +42,16 @@ class PassNewFragment : Fragment() {
         }
 
 
-        bind.imgSaveBtn.setOnClickListener {
-            //сохранить пароль
-            val service = bind.edTxtPassService.text.toString()
-            val login = bind.edTxtPassLogin.text.toString()
-            val pass = bind.eddTxtPassPass.text.toString()
-            viewModel.insert(PassModel(null,service,login,pass)){}
-            APP.navController.navigate(R.id.action_passNewFragment_to_passFragment)
-        }
+        bind.imgSaveBtn.setOnClickListener { savePass(viewModel) }
+    }
+
+    private fun savePass(viewModel: PassNewViewModel) {
+        //сохранить пароль
+        val service = bind.edTxtPassService.text.toString()
+        val login = bind.edTxtPassLogin.text.toString()
+        val pass = bind.eddTxtPassPass.text.toString()
+        viewModel.insert(PassModel(null, service, login, pass)) {}
+        APP.navController.navigate(R.id.action_passNewFragment_to_passFragment)
     }
 
     private fun animationStart() {

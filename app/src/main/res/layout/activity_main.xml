@@ -79,7 +79,7 @@
         app:cardElevation="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passCard2">
+        app:layout_constraintTop_toBottomOf="@+id/passCard">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -116,7 +116,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/passCard2"
+        android:id="@+id/passCard"
         android:layout_width="0dp"
         android:layout_height="180dp"
         android:layout_marginStart="24dp"
@@ -148,7 +148,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/editTextNumberPassword"
+                android:id="@+id/txtPass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -164,7 +164,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/authStatusTv2" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/btnOkPass"
                 android:layout_width="150dp"
                 android:layout_height="50dp"
                 android:layout_marginBottom="8dp"
@@ -228,7 +228,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:textColor="#C62828"
+        android:textColor="#022d33"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/imgMail"
         app:layout_constraintEnd_toEndOf="parent"

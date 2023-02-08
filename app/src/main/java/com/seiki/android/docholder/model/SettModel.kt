@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey
 data class SettModel(
     @PrimaryKey
     var id: Int = 0,
-    var pass:Int,
+    var pass: Int,
     var switchPass:Boolean,
     var switchBio:Boolean,
 )
